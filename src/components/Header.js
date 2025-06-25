@@ -8,6 +8,7 @@ import { addUser, removeUser } from "../utils/userSlice";
 import { useEffect } from "react";
 import { LOGO, SUPPORTED_LANGUAGES } from "../utils/const";
 import { changeLanguage } from "../utils/configSlice";
+import Search from "./Search";
 
 
 const Header = () => {
@@ -55,15 +56,18 @@ const Header = () => {
   return (
     <div className="fixed bg-gradient-to-b from-black w-full p-2 flex justify-between z-50 text-white">
       {/* <img src="https://ibb.co/8q1Fzjy" alt="logo"></img> */}
-     
-          <img src={LOGO} alt="logo" className="h-6 mx-1 md:h-12 md:mx-10 md:w-auto"></img>
-    
 
-        
+      <img
+        src={LOGO}
+        alt="logo"
+        className="h-6 mx-1 md:h-12 md:mx-10 md:w-auto"
+        onClick={() => navigate("/")}
+      ></img>
+      {user && <Search />}
 
       {user && (
-        <div className="text-sm flex m-0.5 p-0 md:flex justify-between md:p-2 md:m-2 font-semibold">
-          <select
+        <div className="text-sm md:text-base flex -mt-2 p-0 md:flex justify-between md:p-2  font-semibold">
+          {/* <select
             className="bg-transparent font-bold mx-4"
             onChange={handleLanguageChange}
           >
@@ -76,8 +80,8 @@ const Header = () => {
                 {lang.name}
               </option>
             ))}
-          </select>
-          <p className="mr-4">{user?.displayName}</p>
+          </select> */}
+          <p className="flex justify-center items-center my-2 mx-3">{user?.displayName}</p>
           <button className="font-semibold" onClick={handleSignOut}>
             sign out
           </button>
