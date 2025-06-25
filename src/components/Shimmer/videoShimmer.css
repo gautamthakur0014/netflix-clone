@@ -1,0 +1,78 @@
+/* Main video container */
+.video-shimmer-wrapper {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    aspect-ratio: 16 / 9;
+    max-height: 100vh;
+    overflow: hidden;
+    background-color: #312d2d;
+    border-radius: 8px;
+    /* margin-bottom: 2rem; */
+  }
+  
+  /* Video placeholder area */
+  .video-shimmer-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #353434;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* === Circular Loading Spinner === */
+  .video-circular-loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    transform: translate(-50%, -50%);
+  }
+  
+  .spinner {
+    width: 100%;
+    height: 100%;
+    border: 6px solid #ccc;               /* outer static ring */
+    border-top: 6px solid #ff0000;        /* animated arc (YouTube red) */
+    border-radius: 50%;
+    animation: spin 1.5s linear infinite;
+    box-shadow: 0 0 12px rgba(255, 0, 0, 0.5);
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* === Controls Bar with Shine === */
+  /* .video-shimmer-controls {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    height: 60px;
+    background: linear-gradient(
+      120deg,
+      #3b3b3b 0%,
+      #4e4e4e 50%,
+      #3b3b3b 100%
+    );
+    background-size: 200% 200%;
+    animation: shimmerMotion 2s ease-in-out infinite;
+    border-radius: 12px;
+    box-shadow: inset 0 2px 6px rgba(51, 51, 51, 0.5);
+    z-index: 1;
+  } */
+  
+  /* @keyframes shimmerMotion {
+    0% {
+      background-position: -150% -150%;
+    }
+    100% {
+      background-position: 150% 150%;
+    }
+  }
+   */

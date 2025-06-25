@@ -1,15 +1,14 @@
 import {
   createBrowserRouter,
   RouterProvider,
-  useNavigate,
 } from "react-router-dom";
 import Login from "./Login";
 import Browse from "./Browse";
-import { useDispatch } from "react-redux";
 import ErrorPage from "./ErrorPage";
+import PlayMovies from "./PlayMovies";
+import SearchPage from "./SearchPage";
 
 const Body = () => {
-  const dispatch = useDispatch();
 
   const appRouter = createBrowserRouter([
     {
@@ -21,13 +20,22 @@ const Body = () => {
       element: <Browse />,
     },
     {
+      path: "/play/:Id",
+      element: <PlayMovies />,
+    },
+    {
+      path: "/search/:keyword",
+      element: <SearchPage />,
+    },
+    {
       path: "*",
-      element: <ErrorPage/>
-    }
+      element: <ErrorPage />,
+    },
   ]);
 
   return (
-    <div className="">
+    <div className="hide-scrollbar">
+      {/* <Header/> */}
       <RouterProvider router={appRouter}></RouterProvider>
     </div>
   );
