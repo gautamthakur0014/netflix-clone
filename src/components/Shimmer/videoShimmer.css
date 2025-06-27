@@ -39,7 +39,7 @@
     border-top: 6px solid #ff0000;        /* animated arc (YouTube red) */
     border-radius: 50%;
     animation: spin 1.5s linear infinite;
-    box-shadow: 0 0 12px rgba(255, 0, 0, 0.5);
+    /* box-shadow: 0 0 12px rgba(255, 0, 0, 0.5); */
   }
   
   @keyframes spin {
