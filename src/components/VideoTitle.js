@@ -1,14 +1,28 @@
-const VideoTitle = ({ title, overview }) => {
+import { useNavigate } from "react-router-dom";
+
+const VideoTitle = ({ title, overview, movieId }) => {
+  const navigate = useNavigate();
+  
   return (
-    <div className="absolute px-3 mt-20 md:pt-[20%] md:px-12 md:absolute z-20 md:w-screen md:h-screen text-white ">
+    <div className="absolute pt-[20%] sm:pt-[35%] h-screen px-3 md:pt-[30%] md:px-7 md:absolute z-20 md:w-screen  text-white ">
       {/*bg-gradient-to-r from-black */}
-      <h1 className="text-xl  md:text-5xl md:font-bold ">{title}</h1>
-      <p className="text-xs w-[95%]  md:py-6 md:w-1/2 md:text-lg ">{overview}</p>
+      <h1 className="text-xl mb-2 md:mb-0 md:text-4xl md:font-bold lg:text-5xl ">
+        {title}
+      </h1>
+      <p className="text-xs w-[90%] mb-3 md:mb-0 md:py-6 md:w-3/4 lg:text-xl md:text-base ">
+        {overview}
+      </p>
       <div>
-        <button className="bg-white text-xs h-6 w-20 md:bg-white rounded-md hover:bg-opacity-70 md:text-lg text-black md:h-10 md:w-28 ">
+        <button
+          className="bg-white text-xs h-6 w-16 md:bg-white rounded-md hover:bg-opacity-70 md:text-base text-black lg:h-10 lg:w-28 lg:text-lg md:h-8 md:w-20 "
+          onClick={() => navigate(`/play/${movieId}`)}
+        >
           Play
         </button>
-        <button className="h-6 w-20 bg-gray-400 text-xs text-white md:bg-gray-400 md:text-lg text-white md:h-10 md:w-28 rounded-md mx-2 bg-opacity-100 hover:bg-opacity-70">
+        <button
+          className="h-6 w-16 bg-gray-400 text-xs md:bg-gray-400 md:text-base text-white md:h-8 md:w-20 rounded-md mx-2 bg-opacity-100 hover:bg-opacity-70 lg:h-10 lg:w-28 lg:text-lg"
+          onClick={() => navigate(`/play/${movieId}`)}
+        >
           More Info
         </button>
       </div>
