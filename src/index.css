@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* styles.css or global.css */
+.hide-scrollbar {
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE and Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;                /* Chrome, Safari */
+}
+
+body{
+  background-color: rgb(21, 21, 21);
+  
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* hide horizontal scroll */
+  
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
